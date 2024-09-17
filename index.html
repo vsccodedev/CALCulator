@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>CALC</title>
+</head>
+<body>
+    <div class="container">
+        <div id="alertGifContainer" class="imageCalc">
+            <img src="assets/img/calculator-bro.gif" alt="" id="alertGif">
+        </div>
+        <h1>Calculadora de Despesas 50/30/20</h1>
+        <div>
+            <label for="saldo">Digite o saldo líquido:</label>
+            <input type="number" id="saldo" placeholder="Saldo do mês"><br><br>
+        </div>
+        <div id="despesas">
+            <div class="despesa">
+                <input type="number" class="valor" placeholder="Valor">
+                <input type="text" placeholder="Descrição">
+                <label><input type="radio" name="categoria" value="essencial">Essencial</label>
+                <label><input type="radio" name="categoria" value="desejo">Desejo</label>
+                <label><input type="radio" name="categoria" value="poupanca">Poupança</label>
+            </div>
+        </div>
+
+        <button id="btnPlus">
+            <img src="assets/icons/plusBtn.svg" alt="Adicionar" class="icon">
+        </button><br>
+        <button id="calcular">Calcular</button>
+
+        <fieldset id="resultados" style="display: none;">
+            <legend>Porcentagem Saldo Líquido</legend>
+            <p>50% = <span id="percentual-essencial">0%</span></p>
+            <p>30% = <span id="percentual-desejo">0%</span></p>
+            <p>20% = <span id="percentual-poupanca">0%</span></p>
+        </fieldset>
+        <fieldset id="tabelaPorcentagens" style="display: none;">
+            <legend>Resultado</legend> 
+             <p id="valorEssencial"></p>
+             <p id="valorDesejo"></p>
+             <p id="valorPoupanca"></p>
+        </fieldset>
+            <table id="tabelaDetalhes" style="display: none; margin-top: 20px; text-align: center;">
+                <thead>
+                    <tr>
+                        <th>Essencial</th>
+                        <th>Desejo</th>
+                        <th>Poupança</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="detalhesEssencial"></td>
+                        <td id="detalhesDesejo"></td>
+                        <td id="detalhesPoupanca"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="aviso" class="aviso"></p> <!-- Novo elemento para exibir avisos na tabela -->
+        </fieldset>
+        <button id="limpar" class="icon" style="display: none;">
+            <img src="assets/icons/borracha.png" alt="">
+        </button>
+
+        <button id="salvar">Salvar Despesas</button>
+        <button id="listar">Listar Arquivos</button>
+        <ul id="listaArquivos"></ul>
+    </div>
+    
+    <!-- Modal -->
+     <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Resumo</h2>
+            <p id="modalMessage">Esta é uma mensagem de exemplo
+                <p><button id="modalOk">OK</button>
+            </p>
+        </div>
+     </div>
+
+     
+    <script src="./js/script.js"></script>
+</body>
+</html>

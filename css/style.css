@@ -1,0 +1,293 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #ecf0f1;
+    color: #34495e;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+/*-----------------------------IMAGEM-----------------------------*/
+#alertGifContainer {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.imageCalc {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.imageCalc.show {
+    opacity: 1;
+}
+
+h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/*-----------------------------INPUTS-----------------------------*/
+input[type="number"], input[type="text"], label {
+    width: auto;
+}
+input[type="radio"] {
+    cursor: pointer;
+}
+
+/*-----------------------------FUNÇÕES-----------------------------*/
+#calcular {
+    padding: 3px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 0;
+    width: fit-content;
+}
+
+#calcular:hover {
+    background-color: #2980b9;
+    transition: all .3s ease-in-out;
+}
+
+#tabelaDetalhes th {
+    color: #2019f2;
+}
+#detalhesEssencial, #detalhesDesejo, #detalhesPoupanca {
+    margin: 2px;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*-----------------------------FIELDSET-----------------------------*/
+fieldset {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    max-width: fit-content;
+    display: inline-block;
+}
+
+legend {
+    font-size: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.alert {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+
+
+/*-----------------------------BOTÕES-----------------------------*/
+.btnRemove {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.btnRemove .icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: bottom;
+}
+.btnRemove .icon:hover {
+    width: 28px;
+    height: 24px;
+    background-color: white;
+}
+
+#btnPlus {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+#btnPlus .icon {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#btnPlus:hover {
+    background-color: #2980b9;
+    border-radius: 50%;
+    transition: all .5s linear;
+}
+
+#limpar {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+#limpar img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 0;
+}
+#limpar img:hover {
+    background-color: rgb(144, 161, 161);
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 2);
+}
+
+#salvar,  #listar{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: #fff;
+    background: linear-gradient(90deg, #2980b9 0%, #05444d 100%);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+#salvar:hover, #carregar:hover, #listar:hover {
+    transition: all .3s ease-in-out;
+    background: linear-gradient(90deg, #3898d7 0%, #087d90 100%);
+}
+
+.delete-button {
+    padding: 2px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #fff;
+}
+.delete-button:hover {
+    background-color: #aaa;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px;
+    color: #e74c3c;
+}
+
+/* -----------------------------LISTA ARQUIVOS----------------------------- */
+#listaArquivos  {
+    width: max-content;
+    list-style-type: none;
+    padding: 0;
+    border: 0;
+    margin-top: 1px;
+    margin: 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+#listaArquivos li {
+    padding: 1px;
+    padding-left: 20px;
+}
+
+
+/*-----------------------------MODAL-----------------------------*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% do topo e centraliza */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px;
+    border-radius: 8px;
+    text-align: center;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#modalOk {
+    padding: 5px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#modalOk:hover {
+    background-color: #2980b9;
+    transition: all .3s ease-in-out;
+}
+
+/*-----------------------------LINK-----------------------------*/
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.link-resumo {
+    color: #3498db;
+    cursor: pointer;
+    text-decoration: underline;
+}
